@@ -23,16 +23,9 @@ const RegisterForm = () => {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("name", name);
-    if (profilePicture) {
-      formData.append("profilePicture", profilePicture);
-    }
 
     try {
-      await axios.post(`/api/auth/register`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(`/api/auth/register`, { name, email, password });
       alert(`Registration successful. Please log in.`);
       router.push("/login");
     } catch (err) {
@@ -114,7 +107,6 @@ const RegisterForm = () => {
                   type="checkbox"
                   id="terms"
                   name="terms"
-                  required
                   className="mr-2"
                 />
                 <span>
