@@ -11,7 +11,6 @@ const register = async (req, res) => {
       email,
       password,
       name,
-      profilePicture: profilePictureUrl,
       verificationToken,
     });
     await user.save();
