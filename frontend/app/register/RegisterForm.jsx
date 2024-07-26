@@ -50,7 +50,7 @@ const RegisterForm = () => {
     <div>
       <div className="flex flex-col justify-center gap-4 w-full md:w-[75%] lg:w-[50%] mx-auto p-12">
         <div className=" ">
-          <h1 className="xl:text-4xl md:text-3xl text-2xl  mb-8 font-playfair text-start">
+          <h1 className="xl:text-4xl md:text-3xl text-2xl  mb-8 font-serif text-start">
             Get a Kickstart for Your Career in Consulting – Sign Up Now!
           </h1>
           {error && (
@@ -76,7 +76,7 @@ const RegisterForm = () => {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your first name"
                 required
-                className="p-4 text-lg md:text-xl lg:text-2xl border-2 border-slate-500 w-full rounded-lg text-gray-700"
+                className="p-4 text-md md:text-lg lg:text-xl border border-slate-500 w-full rounded-lg text-gray-700"
               />
             </div>
             <div>
@@ -87,7 +87,7 @@ const RegisterForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="p-4 text-lg md:text-xl lg:text-2xl border-2 border-slate-500 w-full rounded-lg text-gray-700"
+                className="p-4 text-md md:text-lg lg:text-xl border border-slate-500 w-full rounded-lg text-gray-700"
               />
             </div>
             <div>
@@ -98,7 +98,7 @@ const RegisterForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Your password"
                 required
-                className="p-4 text-lg md:text-xl lg:text-2xl border-2 border-slate-500 w-full rounded-lg text-gray-700"
+                className="p-4 text-md md:text-lg lg:text-xl border border-slate-500 w-full rounded-lg text-gray-700"
               />
             </div>
             <div>
@@ -107,7 +107,7 @@ const RegisterForm = () => {
                   type="checkbox"
                   id="terms"
                   name="terms"
-                  className="mr-2 "
+                  className="mr-2 p-4"
                 />
                 <span>
                   Yes, I would like to be informed about new cases, exciting
@@ -151,7 +151,9 @@ const RegisterForm = () => {
               type="submit"
               className="w-full py-4 px-8  bg-[#1e3e5b] rounded-full drop-shadow-lg transition-colors text-white font-semibold flex items-center justify-center gap-4"
             >
-              <span className="text-xl md:text-2xl">Sign up for free </span>
+              <span className="text-xl md:text-2xl font-Inter">
+                Sign up for free{" "}
+              </span>
               <span>
                 <FaCircleArrowRight color="#37ff8b" size={40} />
               </span>
