@@ -50,7 +50,7 @@ const RegisterForm = () => {
     <div>
       <div className="flex flex-col justify-center gap-4 w-full md:w-[75%] lg:w-[50%] mx-auto p-12">
         <div className=" ">
-          <h1 className="text-5xl  mb-8 font-playfair text-start">
+          <h1 className="xl:text-4xl md:text-3xl text-2xl  mb-8 font-playfair text-start">
             Get a Kickstart for Your Career in Consulting – Sign Up Now!
           </h1>
           {error && (
@@ -107,7 +107,7 @@ const RegisterForm = () => {
                   type="checkbox"
                   id="terms"
                   name="terms"
-                  className="mr-2"
+                  className="mr-2 "
                 />
                 <span>
                   Yes, I would like to be informed about new cases, exciting
