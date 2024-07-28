@@ -6,6 +6,12 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: false },
     name: { type: String, required: true },
+    role: { type: String, required: true },
+    city: { type: String, required: false },
+    institute: { type: String, required: false },
+    internshipOrStudent: { type: String, required: false },
+    field: { type: String, required: false },
+    interestedInConsulting: { type: Boolean, required: true },
     verificationToken: String,
   },
   { timestamps: true }

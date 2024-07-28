@@ -6,7 +6,17 @@ import Session from "../../models/Session.mjs";
 import { generateToken } from "../../services/generateToken.mjs";
 
 const register = async (req, res) => {
-  const { email, password, name } = req.body;
+  const {
+    email,
+    password,
+    name,
+    role,
+    city,
+    institute,
+    internshipOrStudent,
+    field,
+    interestedInConsulting,
+  } = req.body;
 
   try {
     const verificationToken = crypto.randomBytes(20).toString("hex");
@@ -15,6 +25,12 @@ const register = async (req, res) => {
       email,
       password,
       name,
+      role,
+      city,
+      institute,
+      internshipOrStudent,
+      field,
+      interestedInConsulting,
       verificationToken,
     });
     await user.save();
