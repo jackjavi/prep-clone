@@ -27,7 +27,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/register/GoogleSignButton.jsx",
-    "app/register/RegisterForm.jsx"
+    "app/register/RegisterForm.jsx",
+    "app/login/page.jsx",
+    "app/(home)/Navbar.jsx"
   ],
   "exclude": ["node_modules"]
 }
