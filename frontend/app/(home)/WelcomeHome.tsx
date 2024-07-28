@@ -5,7 +5,7 @@ const WelcomeHome = () => {
     <div>
       <div className="flex  flex-col  py-20 gap-8 px-12 md:px-0">
         <h1 className="text-4xl md:text-7xl font-montserrat font-bold tracking-wider">
-          Get Ready for Your Consulting Career With PrepLounge
+          Get Ready for Your Consulting Career With Prep CLONE
         </h1>
         <p className="text-2xl font-playfair">
           Every year, over 700,000 students worldwide apply for a job in
