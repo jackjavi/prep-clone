@@ -26,7 +26,7 @@ const LearnSteps = () => {
             and 80 videos and use tools for Mental Math and Personal Fit.
           </p>
         </div>
-        <div className="h-[400px] md:w-1/3 w-full">
+        <div className="min-h-[400px] md:w-1/3 w-full">
           <Image
             src="/assets/step-2.png"
             alt="Step 2"
@@ -42,7 +42,7 @@ const LearnSteps = () => {
             community or get coaching by former (MBB) consultants.
           </p>
         </div>
-        <div className="h-[400px] md:w-1/3 w-full">
+        <div className="min-h-[400px] md:w-1/3 w-full">
           <Image
             src="/assets/step-3.png"
             alt="Step 3"
