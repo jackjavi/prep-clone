@@ -30,7 +30,7 @@ export default function Home() {
     <main className="">
       <Navbar />
       {!isAuthenticated && (
-        <div className="md:flex flex-col">
+        <div className="md:flex flex-auto">
           <div className="flex w-full md:w-1/2">
             <WelcomeHome />
           </div>
