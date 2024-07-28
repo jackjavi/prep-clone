@@ -3,7 +3,7 @@ import React from "react";
 const WelcomeHome = () => {
   return (
     <div>
-      <div className="flex  flex-col  p-12 gap-8">
+      <div className="flex  flex-col  py-20 gap-8 px-12 md:px-0">
         <h1 className="text-4xl md:text-7xl font-montserrat font-bold tracking-wider">
           Get Ready for Your Consulting Career With PrepLounge
         </h1>

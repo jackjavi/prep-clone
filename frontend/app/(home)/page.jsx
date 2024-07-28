@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "./Navbar";
 import RegisterHome from "./RegisterHome";
 import WelcomeHome from "./WelcomeHome";
+import LearnSteps from "./LearnSteps";
 
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,14 +31,17 @@ export default function Home() {
     <main className="">
       <Navbar />
       {!isAuthenticated && (
-        <div className="md:flex flex-auto">
-          <div className="flex w-full md:w-1/2">
-            <WelcomeHome />
+        <>
+          <div className="md:flex flex-auto">
+            <div className="flex w-full md:w-1/2">
+              <WelcomeHome />
+            </div>
+            <div className="flex w-full md:w-1/2 ">
+              <RegisterHome />
+            </div>
           </div>
-          <div className="flex w-full md:w-1/2 ">
-            <RegisterHome />
-          </div>
-        </div>
+          <LearnSteps />
+        </>
       )}
     </main>
   );
