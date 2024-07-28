@@ -1,7 +1,7 @@
-const { google } = require("googleapis");
-const { v4: uuidv4 } = require("uuid");
-const path = require("path");
-const fs = require("fs");
+import { google } from "googleapis";
+import { v4 as uuidv4 } from "uuid";
+import fs from "fs";
+import path from "path";
 
 const SCOPES = ["https://www.googleapis.com/auth/calendar.events"];
 const TOKEN_PATH = "token.json";
