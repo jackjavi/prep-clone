@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import { verifyToken } from "../../services/generateToken.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
+import Session from "../../models/Session.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,24 +27,9 @@ const logout = async (req, res) => {
     }
 
     const sessionId = decoded.sessionId;
-    const storagePath = path.join(__dirname, "../../storage/sessions.json"); // Adjust the path as necessary
 
-    // Read the sessions file
-    const sessionsData = await fs.readFile(storagePath, { encoding: "utf-8" });
-    let sessions = JSON.parse(sessionsData);
-
-    // Ensure sessions is an object
-    if (typeof sessions !== "object" || sessions === null) {
-      throw new Error("Invalid sessions format");
-    }
-
-    // Remove the session
-    delete sessions[sessionId];
-
-    // Write the updated sessions back to the file
-    await fs.writeFile(storagePath, JSON.stringify(sessions, null, 2), {
-      encoding: "utf-8",
-    });
+    // Remove the session from MongoDB
+    await Session.findOneAndDelete({ sessionId });
 
     res.clearCookie("token", {
       httpOnly: true,
