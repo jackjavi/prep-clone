@@ -17,6 +17,7 @@ import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 const clientID = process.env.GOOGLE_CLIENT_ID;
 const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+const callbackURL = process.env.GOOGLE_CALLBACK_URL;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -32,7 +33,7 @@ passport.use(
     {
       clientID: clientID,
       clientSecret: clientSecret,
-      callbackURL: "http://localhost:5555/auth/callback",
+      callbackURL: callbackURL,
     },
     async function (accessToken, refreshToken, profile, cb) {
       console.log("refreshToken:", refreshToken);
@@ -53,7 +54,7 @@ passport.use(
   )
 );
 
-const PORT = process.env.PORT || 5555;
+const PORT = process.env.PORT || ;
 app.listen(PORT, () => {
   connectDatabase();
   console.log(`Server listening on port ${PORT}`);
