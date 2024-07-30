@@ -5,9 +5,11 @@ import Link from "next/link";
 import { GrMenu } from "react-icons/gr";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import ModalLinks from "./ModalLinks";
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -34,6 +36,10 @@ const Navbar = () => {
     } catch (error) {
       console.error("Error logging out:", error);
     }
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -73,9 +79,13 @@ const Navbar = () => {
           </>
         )}
       </div>
-      <div className="md:hidden pr-4">
-        <GrMenu size={24} />
+      <div className="pr-4">
+        <GrMenu size={24} onClick={toggleModal} />
       </div>
+
+      {isModalOpen && (
+        <ModalLinks toggleModal={toggleModal} handleLogout={handleLogout} />
+      )}
     </div>
   );
 };

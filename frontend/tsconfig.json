@@ -29,7 +29,8 @@
     "app/register/GoogleSignButton.jsx",
     "app/register/RegisterForm.jsx",
     "app/login/page.jsx",
-    "app/(home)/Navbar.jsx"
+    "app/(home)/Navbar.jsx",
+    "app/(home)/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

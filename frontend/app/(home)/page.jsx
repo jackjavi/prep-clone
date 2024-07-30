@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import RegisterHome from "./RegisterHome";
 import WelcomeHome from "./WelcomeHome";
 import LearnSteps from "./LearnSteps";
+import SideBar from "./SideBar";
 
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -28,7 +29,7 @@ export default function Home() {
     checkAuthStatus();
   }, [router.pathname]);
   return (
-    <main className="">
+    <main className="h-screen">
       <Navbar />
       {!isAuthenticated && (
         <>
@@ -43,6 +44,7 @@ export default function Home() {
           <LearnSteps />
         </>
       )}
+      {isAuthenticated && <div className=""></div>}
     </main>
   );
 }
