@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const ModalLinks = ({ toggleModal, handleLogout }) => {
+const ModalLinks = ({ toggleModal, handleLogout, isAuthenticated }) => {
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
 
   const toggleCommunity = () => {
@@ -52,9 +52,23 @@ const ModalLinks = ({ toggleModal, handleLogout }) => {
             <Link href="#">
               <span className="text-blue-600">Career</span>
             </Link>
-            <button onClick={handleLogout} className="text-red-500">
-              Logout
-            </button>
+            {isAuthenticated && (
+              <button onClick={handleLogout} className="text-red-500">
+                Logout
+              </button>
+            )}
+            {!isAuthenticated && (
+              <div className="flex flex-col gap-2">
+                <Link href="/login">
+                  <span className="text-blue-600 font-bold">Login</span>
+                </Link>
+                <Link href="/register">
+                  <span className="text-blue-600 font-bold">
+                    Sign up for free
+                  </span>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

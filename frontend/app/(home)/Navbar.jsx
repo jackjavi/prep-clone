@@ -84,7 +84,11 @@ const Navbar = () => {
       </div>
 
       {isModalOpen && (
-        <ModalLinks toggleModal={toggleModal} handleLogout={handleLogout} />
+        <ModalLinks
+          toggleModal={toggleModal}
+          handleLogout={handleLogout}
+          isAuthenticated={isAuthenticated}
+        />
       )}
     </div>
   );
