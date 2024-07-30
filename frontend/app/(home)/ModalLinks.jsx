@@ -11,7 +11,7 @@ const ModalLinks = ({ toggleModal, handleLogout, isAuthenticated }) => {
   return (
     <div className="z-10">
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-6 rounded-lg w-80">
+        <div className="bg-white p-6 rounded-lg w-[75vw] h-[75vh]">
           <button onClick={toggleModal} className="float-right text-lg">
             ✖
           </button>
