@@ -6,15 +6,18 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Navbar from "../(home)/Navbar";
+import Loading from "../Components/Loading";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(`/api/auth/login`, {
         email,
@@ -24,6 +27,8 @@ export default function Login() {
     } catch (err) {
       setError(err.response?.data.error || "Error logging in");
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
   return (

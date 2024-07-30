@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import axios from "axios";
 import { FaCircleArrowRight } from "react-icons/fa6";
+import Loading from "../Components/Loading";
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -18,10 +19,12 @@ const RegisterForm = () => {
   const [field, setField] = useState("");
   const [interestedInConsulting, setInterestedInConsulting] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await axios.post(`/api/auth/register`, {
@@ -35,10 +38,11 @@ const RegisterForm = () => {
         field,
         interestedInConsulting,
       });
-      alert(`Registration successful. Please log in.`);
       router.push("/login");
     } catch (err) {
       setError(err.response?.data.error || "Error registering");
+    } finally {
+      setLoading(false);
     }
   };
 
