@@ -213,15 +213,19 @@ const RegisterForm = () => {
           </Link>
           .
         </p>
-        <button
-          type="submit"
-          className="w-full py-4 px-8  bg-[#1e3e5b] rounded-full drop-shadow-lg transition-colors text-white font-semibold flex items-center justify-center gap-4"
-        >
-          <span className="text-xl md:text-2xl font-Inter">
-            Sign up for free{" "}
-          </span>
-          <FaCircleArrowRight color="#37ff8b" size={40} />
-        </button>
+        {loading ? (
+          <Loading />
+        ) : (
+          <button
+            type="submit"
+            className="w-full py-4 px-8  bg-[#1e3e5b] rounded-full drop-shadow-lg transition-colors text-white font-semibold flex items-center justify-center gap-4"
+          >
+            <span className="text-xl md:text-2xl font-Inter">
+              Sign up for free{" "}
+            </span>
+            <FaCircleArrowRight color="#37ff8b" size={40} />
+          </button>
+        )}
       </form>
     </div>
   );
