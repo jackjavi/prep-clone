@@ -1,12 +1,16 @@
 import React from "react";
-import ScheduleSteps from "./ScheduleSteps";
 import Navbar from "../(home)/Navbar";
+import ScheduleSteps from "./ScheduleSteps";
+import ScheduleMockInterview from "./ScheduleMockInterview";
 
 const page = () => {
   return (
     <div>
       <Navbar />
-      <ScheduleSteps />
+      <div className="md:w-[75vw] mx-auto">
+        <ScheduleSteps />
+        <ScheduleMockInterview />
+      </div>
     </div>
   );
 };
