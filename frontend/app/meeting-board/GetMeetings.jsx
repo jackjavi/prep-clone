@@ -23,9 +23,12 @@ const GetMeetings = () => {
       <div className="font-bold p-8 flex items-center justify-center">
         TO BE STYLED AND INCLUDE ALL DETAILS #SCHEDULED MEETINGS
       </div>
-      <div className=" flex flex-wrap">
+      <div className=" flex flex-wrap gap-8">
         {meetings.map((meeting) => (
-          <div key={meeting._id} className="my-4 md:w-1/2 xl:w-1/3 3xl:w-1/4 ">
+          <div
+            key={meeting._id}
+            className="my-4 w-full mx-4 md:mx-0 rounded-lg p-4 bg-slate-400 md:w-1/2 xl:w-1/3 3xl:w-1/4 "
+          >
             <div>{meeting.date.slice(0, 10)}</div>
             <div>{meeting.time}</div>
             <div>{meeting.meetingLanguage}</div>
