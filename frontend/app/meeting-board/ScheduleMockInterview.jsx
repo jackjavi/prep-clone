@@ -19,6 +19,7 @@ const ScheduleMockInterview = () => {
   const [remarks, setRemarks] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userID, setUserID] = useState(null);
+  const Router = useRouter();
 
   useEffect(() => {
     const checkAuthStatus = async () => {
@@ -63,7 +64,8 @@ const ScheduleMockInterview = () => {
     }
     try {
       axios.post(`/api/google/gmeet`, data).then((response) => {
-        console.log(response.data);
+        alert(response.data);
+        Router.push("/");
       });
     } catch (error) {
       console.error("Error scheduling mock interview:", error);
