@@ -11,6 +11,7 @@ import SideBar from "./SideBar";
 
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,6 +21,9 @@ export default function Home() {
           withCredentials: true,
         });
         setIsAuthenticated(response.data.isAuthenticated);
+        if (response.data.isAuthenticated) {
+          setUser(JSON.parse(response.data.user).name);
+        }
       } catch (error) {
         console.error("Error checking authentication status:", error);
         setIsAuthenticated(false);
@@ -44,7 +48,12 @@ export default function Home() {
           <LearnSteps />
         </>
       )}
-      {isAuthenticated && <div className=""></div>}
+      {isAuthenticated && (
+        <div className="flex items-center justify-center h-screen">
+          WELCOME {user}, I'm working tirelessly to add features to this page!
+          #Home Page view for authenticated user
+        </div>
+      )}
     </main>
   );
 }
