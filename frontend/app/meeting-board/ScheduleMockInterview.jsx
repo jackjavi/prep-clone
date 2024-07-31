@@ -18,6 +18,7 @@ const ScheduleMockInterview = () => {
   const [meetingLanguage, setMeetingLanguage] = useState("English");
   const [remarks, setRemarks] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userID, setUserID] = useState(null);
 
   useEffect(() => {
     const checkAuthStatus = async () => {
@@ -26,6 +27,9 @@ const ScheduleMockInterview = () => {
           withCredentials: true,
         });
         setIsAuthenticated(response.data.isAuthenticated);
+        if (response.data.isAuthenticated) {
+          setUserID(JSON.parse(response.data.user).id);
+        }
       } catch (error) {
         console.error("Error checking authentication status:", error);
         setIsAuthenticated(false);
@@ -46,14 +50,24 @@ const ScheduleMockInterview = () => {
       visibility,
       meetingLanguage,
       remarks,
+      userID,
     };
-    console.log(data);
     if (!isAuthenticated) {
       alert("Please login to schedule a mock interview");
       return;
     }
-    alert("working on this!!!");
-    // Send data to backend via an API call
+
+    if (!date || !time) {
+      alert("Please select a date and time");
+      return;
+    }
+    try {
+      axios.post(`/api/google/gmeet`, data).then((response) => {
+        console.log(response.data);
+      });
+    } catch (error) {
+      console.error("Error scheduling mock interview:", error);
+    }
   };
 
   return (
@@ -65,6 +79,7 @@ const ScheduleMockInterview = () => {
           <DatePicker
             selected={date}
             onChange={(date) => setDate(date)}
+            required
             className=" border rounded px-2 py-1 max-w-md"
           />
         </div>
@@ -73,6 +88,7 @@ const ScheduleMockInterview = () => {
           <input
             type="time"
             value={time}
+            required
             onChange={(e) => setTime(e.target.value)}
             className="w-full border rounded px-2 py-1 max-w-md"
           />
