@@ -23,7 +23,7 @@ const GetMeetings = () => {
       <div className="font-bold p-8 flex items-center justify-center">
         TO BE STYLED AND INCLUDE ALL DETAILS #SCHEDULED MEETINGS
       </div>
-      <div className=" flex flex-wrap gap-8">
+      <div className=" flex flex-wrap gap-8 mx-auto items-center justify-center">
         {meetings.map((meeting) => (
           <div
             key={meeting._id}
