@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Loading from "../Components/Loading";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -19,6 +20,7 @@ const ScheduleMockInterview = () => {
   const [remarks, setRemarks] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userID, setUserID] = useState(null);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -63,12 +65,15 @@ const ScheduleMockInterview = () => {
       return;
     }
     try {
+      setLoading(true);
       axios.post(`/api/google/gmeet`, data).then((response) => {
         alert(response.data);
         router.push("/meeting-board");
       });
     } catch (error) {
       console.error("Error scheduling mock interview:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -101,12 +106,16 @@ const ScheduleMockInterview = () => {
         >
           Advanced settings
         </button>
-        <button
-          onClick={handleSubmit}
-          className="bg-blue-600 text-white py-2 px-4 rounded-full"
-        >
-          Add your invitation
-        </button>
+        {loading ? (
+          <Loading />
+        ) : (
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-600 text-white py-2 px-4 rounded-full"
+          >
+            Add your invitation
+          </button>
+        )}
       </div>
 
       {isAdvancedSettingsOpen && (
