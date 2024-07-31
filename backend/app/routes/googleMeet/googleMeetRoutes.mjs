@@ -95,4 +95,9 @@ router.get(
   })
 );
 
+router.get("/api/google/meetings", async (req, res) => {
+  const meetings = await MeetingData.find({});
+  res.status(200).json(meetings);
+});
+
 export default router;
