@@ -19,7 +19,7 @@ router.get("/gmeet", async (req, res) => {
   Meeting.meet({
     clientId: clientID,
     clientSecret: clientSecret,
-    refreshToken: token[0].googleRefreshToken,
+    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
     date: "2024-12-12",
     time: "10:59",
     summary: "summary",
