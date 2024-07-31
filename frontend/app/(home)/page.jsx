@@ -50,8 +50,8 @@ export default function Home() {
       )}
       {isAuthenticated && (
         <div className="flex items-center justify-center h-screen">
-          WELCOME {user}, I'm working tirelessly to add features to this page!
-          #Home Page view for authenticated user
+          WELCOME {user}, I&apos;m working tirelessly to add features to this
+          page! #Home Page view for authenticated user
         </div>
       )}
     </main>
