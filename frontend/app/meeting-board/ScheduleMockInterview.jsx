@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Loading from "../Components/Loading";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { set } from "react-datepicker/dist/date_utils";
 
 const ScheduleMockInterview = () => {
   const [date, setDate] = useState(new Date());
@@ -106,16 +107,12 @@ const ScheduleMockInterview = () => {
         >
           Advanced settings
         </button>
-        {loading ? (
-          <Loading />
-        ) : (
-          <button
-            onClick={handleSubmit}
-            className="bg-blue-600 text-white py-2 px-4 rounded-full"
-          >
-            Add your invitation
-          </button>
-        )}
+        <button
+          onClick={handleSubmit}
+          className="bg-blue-600 text-white py-2 px-4 rounded-full"
+        >
+          {loading ? <Loading /> : "Add your invitation"}
+        </button>
       </div>
 
       {isAdvancedSettingsOpen && (
