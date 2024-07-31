@@ -4,7 +4,7 @@ import authenticate from "../../middlewares/authenticate.mjs";
 
 const router = express.Router();
 
-router.get("/checkAuth", authenticate, checkAuth);
+router.get("/checkAuth", checkAuth);
 router.post("/logout", authenticate, logout);
 
 export default router;

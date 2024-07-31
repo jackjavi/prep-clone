@@ -69,10 +69,11 @@ const login = async (req, res) => {
       email: user.email,
       id: user._id.toString(),
       name: user.name,
-      profilePicture: user.profilePicture,
     };
 
-    req.user = user;
+    res.cookie("user", JSON.stringify(userData), {
+      maxAge: 43200000, // 12 hours
+    });
 
     res.cookie("token", token, {
       httpOnly: true,

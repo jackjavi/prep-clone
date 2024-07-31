@@ -10,12 +10,23 @@ const __dirname = path.dirname(__filename);
 const storageDir = path.join(__dirname, "../../storage");
 const sessionsFile = path.join(storageDir, "sessions.json");
 
-const checkAuth = (req, res) => {
-  res.json({
-    token: req.cookies.token,
-    isAuthenticated: true,
-    user: req.user,
-  });
+const checkAuth = async (req, res) => {
+  try {
+    if (req.cookies.token && req.cookies.user) {
+      res.json({
+        token: req.cookies.token,
+        isAuthenticated: true,
+        user: req.cookies.user,
+      });
+    } else {
+      res.json({ isAuthenticated: false });
+    }
+  } catch (error) {
+    console.error("Check auth error:", error);
+    res
+      .status(500)
+      .send({ message: `Internal server error: ${error.message}` });
+  }
 };
 
 const logout = async (req, res) => {
