@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import Loading from "../Components/Loading";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { set } from "react-datepicker/dist/date_utils";
 
 const ScheduleMockInterview = () => {
   const [date, setDate] = useState(new Date());
