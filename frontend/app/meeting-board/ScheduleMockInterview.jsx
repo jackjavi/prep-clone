@@ -65,6 +65,7 @@ const ScheduleMockInterview = () => {
     try {
       axios.post(`/api/google/gmeet`, data).then((response) => {
         alert(response.data);
+        router.refresh();
       });
     } catch (error) {
       console.error("Error scheduling mock interview:", error);
