@@ -128,7 +128,7 @@ const ScheduleMockInterview = () => {
           onClick={handleSubmit}
           className="bg-blue-600 text-white py-2 px-4 rounded-full"
         >
-          {loading ? <Loading /> : "Add your invitation"}
+          {loading ? "Loading..." : "Add your invitation"}
         </button>
       </div>
 
@@ -200,7 +200,7 @@ const ScheduleMockInterview = () => {
                 onClick={handleSubmit}
                 className="bg-blue-600 text-white py-2 px-4 rounded-full"
               >
-                Add meeting invitation
+                {loading ? "Loading..." : "Add meeting invitation"}
               </button>
               <button
                 onClick={() => setIsAdvancedSettingsOpen(false)}
