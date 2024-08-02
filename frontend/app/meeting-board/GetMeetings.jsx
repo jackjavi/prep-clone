@@ -31,7 +31,7 @@ const GetMeetings = () => {
             key={meeting._id}
             className="my-4 w-[350px] h-[350px] mx-4 md:mx-0 rounded-lg  border border-gray-300 shadow-lg font-sans"
           >
-            <div className="flex justify-between bg-slate-200 text-slate-900  text-lg rounded-t-lg p-4 h-[40%]">
+            <div className="flex justify-between bg-purple-100 text-slate-900  text-lg rounded-t-lg p-4 h-[40%]">
               <div className="flex flex-col gap-4">
                 <span className="shadow-md shadow-black rounded-full">
                   <CgProfile size={50} color="gray" />
