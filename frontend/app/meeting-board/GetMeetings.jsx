@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { CgProfile } from "react-icons/cg";
 
 const GetMeetings = () => {
   const [meetings, setMeetings] = useState([]);
@@ -27,10 +28,19 @@ const GetMeetings = () => {
         {meetings.map((meeting) => (
           <div
             key={meeting._id}
-            className="my-4 w-full mx-4 md:mx-0 rounded-lg p-4 bg-slate-400 md:w-1/2 xl:w-1/3 3xl:w-1/4 "
+            className="my-4 w-[350px] h-[350px] mx-4 md:mx-0 rounded-lg  border border-gray-300 shadow-lg"
           >
-            <div>{meeting.date.slice(0, 10)}</div>
-            <div>{meeting.time}</div>
+            <div className="flex justify-between bg-slate-200 text-slate-900 font-bold text-lg rounded-t-lg p-4 h-[40%]">
+              <div>
+                <CgProfile size={50} />
+                <span>{meeting.userName}</span>
+              </div>
+              <div className="flex flex-col">
+                <span>{meeting.date.slice(0, 10)}</span>
+                <span>{meeting.time}</span>
+              </div>
+            </div>
+
             <div>{meeting.meetingLanguage}</div>
             <div>{meeting.remarks}</div>
           </div>

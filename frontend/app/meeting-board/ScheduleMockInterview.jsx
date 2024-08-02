@@ -20,6 +20,7 @@ const ScheduleMockInterview = () => {
   const [remarks, setRemarks] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userID, setUserID] = useState(null);
+  const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -32,6 +33,7 @@ const ScheduleMockInterview = () => {
         setIsAuthenticated(response.data.isAuthenticated);
         if (response.data.isAuthenticated) {
           setUserID(JSON.parse(response.data.user).id);
+          setUserName(JSON.parse(response.data.user).name);
         }
       } catch (error) {
         console.error("Error checking authentication status:", error);
@@ -54,7 +56,9 @@ const ScheduleMockInterview = () => {
       meetingLanguage,
       remarks,
       userID,
+      userName,
     };
+
     if (!isAuthenticated) {
       alert("Please login to schedule a mock interview");
       return;
@@ -64,6 +68,20 @@ const ScheduleMockInterview = () => {
       alert("Please select a date and time");
       return;
     }
+
+    const currentDateTime = new Date();
+    const selectedDateTime = new Date(date);
+    const timeParts = time.split(":");
+    selectedDateTime.setHours(timeParts[0]);
+    selectedDateTime.setMinutes(timeParts[1]);
+
+    if (selectedDateTime < currentDateTime) {
+      alert(
+        "The selected date and time are in the past. Please select a future date and time."
+      );
+      return;
+    }
+
     try {
       setLoading(true);
       axios.post(`/api/google/gmeet`, data).then((response) => {

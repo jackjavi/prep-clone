@@ -45,6 +45,7 @@ router.post("/api/google/gmeet", async (req, res) => {
   const description = req.body.description || "Mock Interview";
   const checking = req.body.checking || 0;
   const userId = new mongoose.Types.ObjectId(req.body.userID);
+  const userName = req.body.userName;
   const visibility = req.body.visibility;
   const meetingLanguage = req.body.meetingLanguage;
   const remarks = req.body.remarks || "";
@@ -62,13 +63,29 @@ router.post("/api/google/gmeet", async (req, res) => {
   })
     .then((response) => {
       const meetingLink = response;
+      const timeArray = time.split(":");
+      const hours = parseInt(timeArray[0], 10);
+      const minutes = parseInt(timeArray[1], 10);
+      const totalMinutes = hours * 60 + minutes + 90;
+
+      const endHours = Math.floor(totalMinutes / 60) % 24;
+      const endMinutes = totalMinutes % 60;
+
+      const paddedStartHours = String(hours).padStart(2, "0");
+      const paddedStartMinutes = String(minutes).padStart(2, "0");
+      const paddedEndHours = String(endHours).padStart(2, "0");
+      const paddedEndMinutes = String(endMinutes).padStart(2, "0");
+
+      const newTime = `${paddedStartHours}:${paddedStartMinutes} - ${paddedEndHours}:${paddedEndMinutes}`;
+
       const meetingData = new MeetingData({
         date,
-        time,
+        time: newTime,
         visibility,
         meetingLanguage,
         remarks,
         userId,
+        userName,
         meetingLink,
         summary,
         description,

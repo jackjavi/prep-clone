@@ -27,6 +27,10 @@ const meetingSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  userName: {
+    type: String,
+    required: true,
+  },
   meetingLink: {
     type: String,
     required: true,
