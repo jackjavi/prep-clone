@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CgProfile } from "react-icons/cg";
+import { HiMiniLanguage } from "react-icons/hi2";
 
 const GetMeetings = () => {
   const [meetings, setMeetings] = useState([]);
@@ -28,7 +29,7 @@ const GetMeetings = () => {
         {meetings.map((meeting) => (
           <div
             key={meeting._id}
-            className="my-4 w-[350px] h-[350px] mx-4 md:mx-0 rounded-lg  border border-gray-300 shadow-lg"
+            className="my-4 w-[350px] h-[350px] mx-4 md:mx-0 rounded-lg  border border-gray-300 shadow-lg font-sans"
           >
             <div className="flex justify-between bg-slate-200 text-slate-900  text-lg rounded-t-lg p-4 h-[40%]">
               <div className="flex flex-col gap-4">
@@ -43,7 +44,12 @@ const GetMeetings = () => {
               </div>
             </div>
 
-            <div className="p-4">{meeting.meetingLanguage}</div>
+            <div className="p-4 flex gap-2">
+              <span>
+                <HiMiniLanguage />
+              </span>
+              <span>{meeting.meetingLanguage}</span>
+            </div>
             <div>{meeting.remarks}</div>
           </div>
         ))}
