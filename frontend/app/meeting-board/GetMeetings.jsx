@@ -30,18 +30,20 @@ const GetMeetings = () => {
             key={meeting._id}
             className="my-4 w-[350px] h-[350px] mx-4 md:mx-0 rounded-lg  border border-gray-300 shadow-lg"
           >
-            <div className="flex justify-between bg-slate-200 text-slate-900 font-bold text-lg rounded-t-lg p-4 h-[40%]">
-              <div>
-                <CgProfile size={50} />
-                <span>{meeting.userName}</span>
+            <div className="flex justify-between bg-slate-200 text-slate-900  text-lg rounded-t-lg p-4 h-[40%]">
+              <div className="flex flex-col gap-4">
+                <CgProfile size={50} color="gray" />
+                <span className="pl-1">{meeting.userName}</span>
               </div>
-              <div className="flex flex-col">
-                <span>{meeting.date.slice(0, 10)}</span>
-                <span>{meeting.time}</span>
+              <div className="flex flex-col gap-2">
+                <span className="text-3xl">{meeting.time} h</span>
+                <span className="text-xl text-end">
+                  {meeting.date.slice(0, 10)}
+                </span>
               </div>
             </div>
 
-            <div>{meeting.meetingLanguage}</div>
+            <div className="p-4">{meeting.meetingLanguage}</div>
             <div>{meeting.remarks}</div>
           </div>
         ))}
