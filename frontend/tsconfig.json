@@ -30,7 +30,8 @@
     "app/register/RegisterForm.jsx",
     "app/login/page.jsx",
     "app/(home)/Navbar.jsx",
-    "app/(home)/page.jsx"
+    "app/(home)/page.jsx",
+    "app/Components/Code.jsx"
   ],
   "exclude": ["node_modules"]
 }

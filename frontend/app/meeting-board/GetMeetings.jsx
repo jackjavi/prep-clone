@@ -33,8 +33,12 @@ const GetMeetings = () => {
           >
             <div className="flex justify-between bg-purple-100 text-slate-900  text-lg rounded-t-lg p-4 h-[40%]">
               <div className="flex flex-col gap-4">
-                <span className="shadow-md shadow-black rounded-full">
-                  <CgProfile size={50} color="gray" />
+                <span className="">
+                  <CgProfile
+                    size={50}
+                    color="gray"
+                    className="shadow-md shadow-black rounded-full"
+                  />
                 </span>
                 <span className="pl-1">{meeting.userName}</span>
               </div>
