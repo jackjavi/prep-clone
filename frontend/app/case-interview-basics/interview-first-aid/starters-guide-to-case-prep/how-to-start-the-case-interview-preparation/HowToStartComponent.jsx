@@ -1,15 +1,17 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const HowToStartComponent = () => {
   return (
-    <article class="basic-article article-content js-article-content">
-      <h2>
+    <article className="">
+      <h2 className="text-3xl font-semibold py-4">
         <strong>
           Prepare for Your Consulting Case Interview by Learning the Basics and
           Mentally Preparing for the Intense Practice
         </strong>
       </h2>
-      <h3>
+      <h3 className="text-2xl font-semibold py-4">
         <strong>How do I prepare for this daunting task?</strong>
       </h3>
       <p>
@@ -29,9 +31,11 @@ const HowToStartComponent = () => {
       </p>
       <p>&nbsp;</p>
       <figure class="image">
-        <img
-          src="/uploads/bootcamp/68/type-conversion-1682499828-cqgva7lsvdql.webp"
-          alt="type-conversion-1682499828-cqgva7lsvdql.webp"
+        <Image
+          src="/assets/case-interview/how-to-start.webp"
+          alt="how-to-start.webp"
+          width={800}
+          height={600}
         />
       </figure>
       <p>&nbsp;</p>
