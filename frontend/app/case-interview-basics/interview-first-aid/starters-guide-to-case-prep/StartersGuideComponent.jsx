@@ -5,7 +5,7 @@ const StartersGuideComponent = () => {
   return (
     <article className="px-40">
       <h1 className="text-2xl font-semibold py-4">
-        Starter's Guide to Case Prep
+        Starter&apos;s Guide to Case Prep
       </h1>
       <div data-href="/case-interview-basics/interview-first-aid/starters-guide-to-case-prep/how-to-start-the-case-interview-preparation">
         <h2 className="text-2xl font-semibold py-4 underline">

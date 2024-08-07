@@ -41,9 +41,9 @@ const HowToStartComponent = () => {
           <strong>
             Familiarize yourself with the basic concepts and frameworks.
           </strong>{" "}
-          Don't spend too much time memorizing things. Rather, try to go through
-          cases yourself and think about how you can build on the frameworks to
-          develop your own customized structure.
+          Don&apos;t spend too much time memorizing things. Rather, try to go
+          through cases yourself and think about how you can build on the
+          frameworks to develop your own customized structure.
         </li>
         <li>
           <strong>Interviews with peers:</strong> Put theory into practice by{" "}

@@ -26,7 +26,7 @@ const FirstAidComponent = () => {
           href="/case-interview-basics/interview-first-aid/starters-guide-to-case-prep"
           class="content-item"
         >
-          Starter's Guide to Case Prep
+          Starter&apos;s Guide to Case Prep
         </Link>
         <Link
           href="/case-interview-basics/interview-first-aid/crack-the-case-interview"
