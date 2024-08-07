@@ -226,7 +226,7 @@ const ConductMockInterviews = () => {
           tied to specific coaches.
         </p>
         <p>
-          For further tips, don't miss out on our article:&nbsp;
+          For further tips, don&apos;t miss out on our article:&nbsp;
           <a href="https://www.preplounge.com/en/articles/case-interview-coaching">
             Case Interview Coaching: How to Make the Most out of Your Coaching
             Sessions in 6 Steps
