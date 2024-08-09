@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import RegisterHome from "./RegisterHome";
 import WelcomeHome from "./WelcomeHome";
 import LearnSteps from "./LearnSteps";
+import WelcomeHomeAuthenticated from "./WelcomeHomeAuthenticated";
 import SideBar from "./SideBar";
 
 export default function Home() {
@@ -49,10 +50,9 @@ export default function Home() {
         </>
       )}
       {isAuthenticated && (
-        <div className="flex items-center justify-center h-screen">
-          WELCOME {user}, I&apos;m working tirelessly to add features to this
-          page! #Home Page view for authenticated user
-        </div>
+        <>
+          <WelcomeHomeAuthenticated user={user} />
+        </>
       )}
     </main>
   );
