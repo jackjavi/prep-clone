@@ -96,10 +96,21 @@ const SideBar = () => {
         </div>
         {openSection === "recruitmentTests" && (
           <ul className="ml-4 mt-2">
-            <li>• BCG Online Case</li>
-            <li>• McKinsey Imbellus Game</li>
-            <li>• Bain Sova Test</li>
-            <li>• Pymetrics Game Assessment</li>
+            <Link href="/case-interview-basics/interview-first-aid/recruitment-tests-in-consulting-interviews/bcg-online-case">
+              <li>• BCG Online Case</li>
+            </Link>
+
+            <Link href="/case-interview-basics/interview-first-aid/recruitment-tests-in-consulting-interviews/mckinsey-imbellus-game">
+              <li>• McKinsey Imbellus Game</li>
+            </Link>
+
+            <Link href="/case-interview-basics/interview-first-aid/recruitment-tests-in-consulting-interviews/bain-sova-test">
+              <li>• Bain Sova Test</li>
+            </Link>
+
+            <Link href="/case-interview-basics/interview-first-aid/recruitment-tests-in-consulting-interviews/pymetrics-game-assessment">
+              <li>• Pymetrics Game Assessment</li>
+            </Link>
           </ul>
         )}
       </div>
