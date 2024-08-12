@@ -48,10 +48,18 @@ const SideBar = () => {
         </div>
         {openSection === "crackCase" && (
           <ul className="ml-4 mt-2">
-            <li>✓ Preparation for Case Studies</li>
-            <li>✓ Approaching a Case</li>
-            <li>✓ Interviewer-Led vs Candidate-Led Cases</li>
-            <li>✓ Note-taking in Case Interviews</li>
+            <Link href="/case-interview-basics/interview-first-aid/crack-the-case-interview/preparation-for-case-studies">
+              <li>✓ Preparation for Case Studies</li>
+            </Link>
+            <Link href="/case-interview-basics/interview-first-aid/crack-the-case-interview/approaching-a-case">
+              <li>✓ Approaching a Case</li>
+            </Link>
+            <Link href="/case-interview-basics/interview-first-aid/crack-the-case-interview/interviewer-led-vs-candidate-led-cases">
+              <li>✓ Interviewer-Led vs Candidate-Led Cases</li>
+            </Link>
+            <Link href="/case-interview-basics/interview-first-aid/crack-the-case-interview/note-taking-in-case-interviews">
+              <li>✓ Note-taking in Case Interviews</li>
+            </Link>
           </ul>
         )}
       </div>
