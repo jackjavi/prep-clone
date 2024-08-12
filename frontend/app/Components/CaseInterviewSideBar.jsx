@@ -75,8 +75,12 @@ const SideBar = () => {
         </div>
         {openSection === "personalFit" && (
           <ul className="ml-4 mt-2">
-            <li>• Personal Fit Interview</li>
-            <li>• Key Questions in the Personal Fit Interview</li>
+            <Link href="/case-interview-basics/interview-first-aid/ace-the-personal-fit-interview/personal-fit-interview">
+              <li>• Personal Fit Interview</li>
+            </Link>
+            <Link href="/case-interview-basics/interview-first-aid/ace-the-personal-fit-interview/key-questions-in-the-personal-fit-interview">
+              <li>• Key Questions in the Personal Fit Interview</li>
+            </Link>
           </ul>
         )}
       </div>
