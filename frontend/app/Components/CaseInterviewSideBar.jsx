@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import CaseCrackingSBComponent from "@/app/Components/CaseCrackingSBComponent";
+import BusinessConceptsSBComponent from "@/app/Components/BusinessConceptsSBComponent";
 
 const SideBar = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -12,7 +13,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className=" h-[80vh] w-64 p-4 bg-[#dcdaf8]">
+    <div className=" min-h-[80vh] w-64 p-4 bg-[#dcdaf8]">
       <div className=" ">
         <Link href="/case-interview-basics/interview-first-aid">
           <h2 className="font-bold mb-4">Interview First Aid</h2>
@@ -119,6 +120,8 @@ const SideBar = () => {
       </div>
       {/* Case cracking */}
       <CaseCrackingSBComponent />
+      {/* Business Concepts */}
+      <BusinessConceptsSBComponent />
     </div>
   );
 };
