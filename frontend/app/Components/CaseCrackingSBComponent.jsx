@@ -110,28 +110,28 @@ const SideBar = () => {
           </div>
           {openSubSection === "practiceBasics" && (
             <ul className="ml-4 mt-2">
-              <Link href="/case-cracking/charts-data-case-interviews">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/charts-and-data-in-case-interviews">
                 <li>• Charts and Data in Case Interviews</li>
               </Link>
-              <Link href="/case-cracking/why-math-matters">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/why-math-matters">
                 <li>• Why Math Matters</li>
               </Link>
-              <Link href="/case-cracking/math-skills-required-case-interviews">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/math-skills-required-in-case-interviews">
                 <li>• Math Skills Required in Case Interviews</li>
               </Link>
-              <Link href="/case-cracking/fast-math">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/fast-math">
                 <li>• Fast Math</li>
               </Link>
-              <Link href="/case-cracking/important-facts">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/important-facts">
                 <li>• Important Facts</li>
               </Link>
-              <Link href="/case-cracking/correlation-causality">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/correlation-and-causality">
                 <li>• Correlation and Causality</li>
               </Link>
-              <Link href="/case-cracking/qualitative-quantitative-analysis">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/qualitative-and-quantitative-analysis">
                 <li>• Qualitative and Quantitative Analysis</li>
               </Link>
-              <Link href="/case-cracking/roi-roas">
+              <Link href="/case-interview-basics/case-cracking-toolbox/practice-your-basics/roi-and-roas">
                 <li>• ROI and ROAS</li>
               </Link>
             </ul>
