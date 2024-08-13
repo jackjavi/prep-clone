@@ -65,37 +65,37 @@ const SideBar = () => {
           </div>
           {openSubSection === "structureThoughts" && (
             <ul className="ml-4 mt-2">
-              <Link href="/case-cracking/issue-tree">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/issue-tree">
                 <li>• Issue Tree</li>
               </Link>
-              <Link href="/case-cracking/mece-principle">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/mece-principle">
                 <li>• MECE Principle</li>
               </Link>
-              <Link href="/case-cracking/pyramid-principle">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/pyramid-principle">
                 <li>• Pyramid Principle</li>
               </Link>
-              <Link href="/case-cracking/porters-five-forces">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/porters-five-forces">
                 <li>• Porter's Five Forces</li>
               </Link>
-              <Link href="/case-cracking/4c-framework">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/4c-framework">
                 <li>• 4C Framework</li>
               </Link>
-              <Link href="/case-cracking/4p-framework">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/4p-framework">
                 <li>• 4P Framework</li>
               </Link>
-              <Link href="/case-cracking/2x2-matrices-bcg-matrix">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/2x2-matrices-and-the-bcg-matrix">
                 <li>• 2x2 Matrices and the BCG Matrix</li>
               </Link>
-              <Link href="/case-cracking/stacey-matrix">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/the-stacey-matrix">
                 <li>• The Stacey Matrix</li>
               </Link>
-              <Link href="/case-cracking/influence-model">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/influence-model">
                 <li>• Influence Model</li>
               </Link>
-              <Link href="/case-cracking/adkar-model">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/adkar-model">
                 <li>• ADKAR Model</li>
               </Link>
-              <Link href="/case-cracking/mckinsey-growth-pyramid">
+              <Link href="/case-interview-basics/case-cracking-toolbox/structure-your-thoughts/mckinsey-growth-pyramid">
                 <li>• McKinsey Growth Pyramid</li>
               </Link>
             </ul>
