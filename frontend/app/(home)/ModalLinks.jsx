@@ -3,15 +3,20 @@ import Link from "next/link";
 
 const ModalLinks = ({ toggleModal, handleLogout, isAuthenticated }) => {
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false); // State to manage the Resources tab
 
   const toggleCommunity = () => {
     setIsCommunityOpen(!isCommunityOpen);
   };
 
+  const toggleResources = () => {
+    setIsResourcesOpen(!isResourcesOpen); // Toggle the Resources tab
+  };
+
   return (
     <div className="z-10">
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-6 rounded-lg w-[75vw] h-[75vh]">
+        <div className="bg-white p-6 rounded-lg w-[90vw] md:w-[65vw] h-[50vh">
           <button onClick={toggleModal} className="float-right text-lg">
             ✖
           </button>
@@ -46,9 +51,45 @@ const ModalLinks = ({ toggleModal, handleLogout, isAuthenticated }) => {
             <Link href="#">
               <span className="text-blue-600">Coaching</span>
             </Link>
-            <Link href="#">
-              <span className="text-blue-600">Resources</span>
-            </Link>
+            <div>
+              <span
+                className="text-slate-800 font-semibold cursor-pointer"
+                onClick={toggleResources}
+              >
+                Resources
+              </span>
+              {isResourcesOpen && (
+                <div className="ml-4 flex flex-col gap-2 mt-2">
+                  <Link href="/case-interview-basics">
+                    <span className="text-blue-600">Case Interview Basics</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Case Library</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">AI Casebot</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Tests & Guides</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Mental Math Tool</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Stress Questions</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Drills</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Video Tutorials</span>
+                  </Link>
+                  <Link href="#">
+                    <span className="text-blue-600">Brainteaser</span>
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="#">
               <span className="text-blue-600">Career</span>
             </Link>
