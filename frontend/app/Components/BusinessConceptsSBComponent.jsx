@@ -106,109 +106,109 @@ const BusinessConceptsSBComponent = () => {
           </div>
           {openSubSection === "commonTermsOfBusiness" && (
             <ul className="ml-4 mt-2">
-              <Link href="/business-terms/opportunity-costs">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/opportunity-costs">
                 <li>• Opportunity Costs</li>
               </Link>
-              <Link href="/business-terms/tuckman-model">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-tuckman-model">
                 <li>• The Tuckman Model</li>
               </Link>
-              <Link href="/business-terms/economy-of-scale">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/economy-of-scale-and-economy-of-scope">
                 <li>• Economy of Scale and Economy of Scope</li>
               </Link>
-              <Link href="/business-terms/servant-leadership">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/servant-leadership">
                 <li>• Servant Leadership</li>
               </Link>
-              <Link href="/business-terms/net-present-value">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/net-present-value-npv">
                 <li>• Net Present Value - NPV</li>
               </Link>
-              <Link href="/business-terms/balance-sheet">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/balance-sheet">
                 <li>• Balance Sheet</li>
               </Link>
-              <Link href="/business-terms/design-thinking">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/design-thinking">
                 <li>• Design Thinking</li>
               </Link>
-              <Link href="/business-terms/income-statement">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/income-statement">
                 <li>• Income Statement</li>
               </Link>
-              <Link href="/business-terms/cash-flow-statement">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/cash-flow-statement">
                 <li>• Cash Flow Statement</li>
               </Link>
-              <Link href="/business-terms/supply-and-demand">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/supply-and-demand">
                 <li>• Supply and Demand</li>
               </Link>
-              <Link href="/business-terms/fixed-variable-costs">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/fixed-variable-costs">
                 <li>• Fixed & Variable Costs</li>
               </Link>
-              <Link href="/business-terms/cagr">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/cagr-compound-annual-growth-rate">
                 <li>• CAGR-Compound Annual Growth Rate</li>
               </Link>
-              <Link href="/business-terms/scrum-framework">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-scrum-framework-a-guide-for-aspiring-consultants">
                 <li>• The Scrum Framework: A Guide for Aspiring Consultants</li>
               </Link>
-              <Link href="/business-terms/kanban-framework">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-kanban-framework">
                 <li>• The Kanban Framework</li>
               </Link>
-              <Link href="/business-terms/blue-ocean-strategy">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-blue-ocean-strategy">
                 <li>• The Blue Ocean Strategy</li>
               </Link>
-              <Link href="/business-terms/lean-management">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/lean-management">
                 <li>• Lean Management</li>
               </Link>
-              <Link href="/business-terms/peter-principle">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/peter-principle">
                 <li>• Peter Principle</li>
               </Link>
-              <Link href="/business-terms/emotional-intelligence">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/emotional-intelligence">
                 <li>• Emotional Intelligence</li>
               </Link>
-              <Link href="/business-terms/amazon-interview-questions">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-amazon-interview-questions">
                 <li>• The Amazon Interview Questions</li>
               </Link>
-              <Link href="/business-terms/itil">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/information-technology-infrastructure-library-itil">
                 <li>• Information Technology Infrastructure Library (ITIL)</li>
               </Link>
-              <Link href="/business-terms/devops">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/devops">
                 <li>• DevOps</li>
               </Link>
-              <Link href="/business-terms/five-dysfunctions-of-a-team">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/five-dysfunctions-of-a-team">
                 <li>• Five Dysfunctions of a Team</li>
               </Link>
-              <Link href="/business-terms/kolb-learning-circle">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/kolbs-learning-circle">
                 <li>• Kolb's Learning Circle</li>
               </Link>
-              <Link href="/business-terms/interpersonal-communication">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/interpersonal-communication">
                 <li>• Interpersonal Communication</li>
               </Link>
-              <Link href="/business-terms/six-sigma">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/six-sigma">
                 <li>• Six Sigma</li>
               </Link>
-              <Link href="/business-terms/hypothesis-in-consulting">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-role-of-the-hypothesis-in-consulting">
                 <li>• The Role of the Hypothesis in Consulting</li>
               </Link>
-              <Link href="/business-terms/inflation">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/the-roots-and-effects-of-inflation">
                 <li>• The Roots and Effects of Inflation</li>
               </Link>
-              <Link href="/business-terms/amazon-leadership-principles">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/amazon-leadership-principles">
                 <li>• Amazon Leadership Principles</li>
               </Link>
-              <Link href="/business-terms/learning-organization">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/learning-organization">
                 <li>• Learning Organization</li>
               </Link>
-              <Link href="/business-terms/theory-of-planned-behavior">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/theory-of-planned-behavior">
                 <li>• Theory of Planned Behavior</li>
               </Link>
-              <Link href="/business-terms/situational-leadership">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/situational-leadership">
                 <li>• Situational Leadership</li>
               </Link>
-              <Link href="/business-terms/theory-of-constraints">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/theory-of-constraints">
                 <li>• Theory of Constraints</li>
               </Link>
-              <Link href="/business-terms/herzberg-2-factor-theory">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/herzbergs-2-factor-theory">
                 <li>• Herzberg's 2-Factor Theory</li>
               </Link>
-              <Link href="/business-terms/capability-based-planning">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/capability-based-planning">
                 <li>• Capability-Based Planning</li>
               </Link>
-              <Link href="/business-terms/unique-value-proposition">
+              <Link href="/case-interview-basics/business-concept-library/common-terms-of-business/unique-value-proposition-uvp">
                 <li>• Unique Value Proposition (UVP)</li>
               </Link>
             </ul>
