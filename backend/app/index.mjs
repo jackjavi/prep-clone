@@ -36,12 +36,14 @@ passport.use(
       callbackURL: callback_URL,
     },
     async function (accessToken, refreshToken, profile, cb) {
-      console.log("refreshToken:", refreshToken);
+      // console.log("refreshToken:", refreshToken);
+      // console.log("accessToken:", accessToken);
       try {
         await GoogleRefreshToken.deleteMany();
 
         const googleRefreshToken = new GoogleRefreshToken({
           googleRefreshToken: refreshToken,
+          googleAccessToken: accessToken,
         });
         await googleRefreshToken.save();
 

@@ -21,7 +21,7 @@ router.get("/gmeet", async (req, res) => {
   Meeting.meet({
     clientId: clientID,
     clientSecret: clientSecret,
-    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+    refreshToken: token[0].googleRefreshToken,
     date: "2024-12-12",
     time: "10:59",
     summary: "summary",
@@ -49,11 +49,12 @@ router.post("/api/google/gmeet", async (req, res) => {
   const visibility = req.body.visibility;
   const meetingLanguage = req.body.meetingLanguage;
   const remarks = req.body.remarks || "";
+  const token = await GoogleRefreshToken.find({});
 
   Meeting.meet({
     clientId: clientID,
     clientSecret: clientSecret,
-    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+    refreshToken: token[0].googleRefreshToken,
     date: date,
     time: time,
     summary: summary,
@@ -106,7 +107,13 @@ router.get(
 router.get(
   "/auth/google",
   passport.authenticate("google", {
-    scope: ["profile", "https://www.googleapis.com/auth/calendar"],
+    scope: [
+      "profile",
+      "https://www.googleapis.com/auth/calendar",
+      "email",
+      "https://www.googleapis.com/auth/calendar.events",
+      "https://www.googleapis.com/auth/calendar.events.readonly",
+    ],
     accessType: "offline",
     prompt: "consent",
   })

@@ -6,7 +6,12 @@ const googleRefreshTokenSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    googleAccessToken: {
+      type: String,
+      required: true,
+    },
   },
+
   {
     timestamps: true,
   }
