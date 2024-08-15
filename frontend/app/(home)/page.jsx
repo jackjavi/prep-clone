@@ -8,7 +8,7 @@ import RegisterHome from "./RegisterHome";
 import WelcomeHome from "./WelcomeHome";
 import LearnSteps from "./LearnSteps";
 import WelcomeHomeAuthenticated from "./WelcomeHomeAuthenticated";
-import SideBar from "./SideBar";
+import MainSideBar from "@/app/Components/MainSideBar";
 import Footer from "@/app/Components/Footer";
 
 export default function Home() {
@@ -52,9 +52,12 @@ export default function Home() {
           </>
         )}
         {isAuthenticated && (
-          <>
+          <div className="flex gap-12">
+            <div>
+              <MainSideBar />
+            </div>
             <WelcomeHomeAuthenticated user={user} />
-          </>
+          </div>
         )}
       </main>
       <Footer />

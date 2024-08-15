@@ -3,6 +3,7 @@ import Navbar from "../(home)/Navbar";
 import ScheduleSteps from "./ScheduleSteps";
 import ScheduleMockInterview from "./ScheduleMockInterview";
 import GetMeetings from "./GetMeetings";
+import Footer from "../Components/Footer";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         <ScheduleMockInterview />
         <GetMeetings />
       </div>
+      <Footer />
     </div>
   );
 };
