@@ -9,6 +9,7 @@ import WelcomeHome from "./WelcomeHome";
 import LearnSteps from "./LearnSteps";
 import WelcomeHomeAuthenticated from "./WelcomeHomeAuthenticated";
 import SideBar from "./SideBar";
+import Footer from "@/app/Components/Footer";
 
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,26 +35,29 @@ export default function Home() {
     checkAuthStatus();
   }, [router.pathname]);
   return (
-    <main className="h-screen">
-      <Navbar />
-      {!isAuthenticated && (
-        <>
-          <div className="md:flex flex-auto">
-            <div className="flex w-full md:w-1/2">
-              <WelcomeHome />
+    <>
+      <main className="h-full">
+        <Navbar />
+        {!isAuthenticated && (
+          <>
+            <div className="md:flex flex-auto">
+              <div className="flex w-full md:w-1/2">
+                <WelcomeHome />
+              </div>
+              <div className="flex w-full md:w-1/2 ">
+                <RegisterHome />
+              </div>
             </div>
-            <div className="flex w-full md:w-1/2 ">
-              <RegisterHome />
-            </div>
-          </div>
-          <LearnSteps />
-        </>
-      )}
-      {isAuthenticated && (
-        <>
-          <WelcomeHomeAuthenticated user={user} />
-        </>
-      )}
-    </main>
+            <LearnSteps />
+          </>
+        )}
+        {isAuthenticated && (
+          <>
+            <WelcomeHomeAuthenticated user={user} />
+          </>
+        )}
+      </main>
+      <Footer />
+    </>
   );
 }

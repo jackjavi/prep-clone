@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import Navbar from "../(home)/Navbar";
 import Loading from "../Components/Loading";
+import Footer from "@/app/Components/Footer";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ export default function Login() {
   return (
     <div className="">
       <Navbar />
-      <div className="flex flex-col justify-center gap-4 w-full md:w-[75%] lg:w-[50%] mx-auto p-12">
+      <div className="flex flex-col justify-center  md:h-[80vh] gap-4 w-full md:w-[75%] lg:w-[50%] mx-auto p-12">
         <div className=" ">
           <h1 className="xl:text-4xl md:text-3xl text-2xl  mb-8 font-serif text-start">
             Log in Now!
@@ -106,6 +107,7 @@ export default function Login() {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

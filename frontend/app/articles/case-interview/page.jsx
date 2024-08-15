@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "@/app/(home)/Navbar";
+import Footer from "@/app/Components/Footer";
 
 const page = () => {
   return (
     <>
       <Navbar />
-      <div class="layout-content-container js-layout-content-container mt-8">
+      <div className="py-12">
         <main class="site-content js-site-content">
           <div class="site-content-inner">
             <article class="section">
@@ -3625,6 +3626,7 @@ const page = () => {
           </div>{" "}
         </main>
       </div>
+      <Footer />
     </>
   );
 };
