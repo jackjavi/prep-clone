@@ -123,13 +123,13 @@ const ScheduleMockInterview = () => {
         </div>
         <button
           onClick={() => setIsAdvancedSettingsOpen(true)}
-          className="text-blue-600 underline"
+          className="text-slate-800 underline"
         >
           Advanced settings
         </button>
         <button
           onClick={handleSubmit}
-          className="bg-blue-600 text-white py-2 px-4 rounded-full"
+          className="bg-slate-800 text-white py-2 px-4 rounded-full"
         >
           {loading ? "Loading..." : "Add your invitation"}
         </button>
