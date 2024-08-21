@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CgProfile } from "react-icons/cg";
 import { HiMiniLanguage } from "react-icons/hi2";
+import { useRouter } from "next/navigation";
 
 const GetMeetings = () => {
   const [meetings, setMeetings] = useState([]);
@@ -12,6 +13,7 @@ const GetMeetings = () => {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchMeetings = async () => {
@@ -63,7 +65,8 @@ const GetMeetings = () => {
         user2Id: userID,
         user2Email: userEmail,
       });
-      console.log("Invitation accepted:", response.data);
+      alert("Invitation accepted successfully, check your email for details");
+      router.push("/");
     } catch (error) {
       console.error("Error accepting invitation:", error);
     }
