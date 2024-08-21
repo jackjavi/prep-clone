@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="flex md:pr-20 gap-8">
         {isAuthenticated ? (
           <>
-            <Link href="/my-account">
+            <Link href="#">
               <button className="hidden md:block py-2 px-8 border-2 border-slate-800 rounded-full">
                 My Account
               </button>
