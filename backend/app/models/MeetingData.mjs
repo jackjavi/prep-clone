@@ -54,6 +54,10 @@ const meetingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isAccepted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const MeetingData = mongoose.model("MeetingData", meetingSchema);
