@@ -88,7 +88,7 @@ const ScheduleMockInterview = () => {
     try {
       setLoading(true);
       axios.post(`/api/google/gmeet`, data).then((response) => {
-        alert(response.data);
+        alert("Mock interview scheduled successfully");
         router.push("/meeting-board");
       });
     } catch (error) {
