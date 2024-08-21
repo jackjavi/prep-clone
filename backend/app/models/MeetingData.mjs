@@ -31,6 +31,17 @@ const meetingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user2Id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: false,
+    default: null,
+  },
+  user2Email: {
+    type: String,
+    required: false,
+    default: null,
+  },
   meetingLink: {
     type: String,
     required: true,

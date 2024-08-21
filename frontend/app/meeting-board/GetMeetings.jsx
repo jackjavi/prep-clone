@@ -7,6 +7,11 @@ import { HiMiniLanguage } from "react-icons/hi2";
 
 const GetMeetings = () => {
   const [meetings, setMeetings] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userID, setUserID] = useState(null);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMeetings = async () => {
@@ -20,11 +25,52 @@ const GetMeetings = () => {
     fetchMeetings();
   }, []);
 
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const response = await axios.get(`/api/app/checkAuth`, {
+          withCredentials: true,
+        });
+        setIsAuthenticated(response.data.isAuthenticated);
+        if (response.data.isAuthenticated) {
+          setUserID(JSON.parse(response.data.user).id);
+          setUserName(JSON.parse(response.data.user).name);
+          setUserEmail(JSON.parse(response.data.user).email);
+        }
+      } catch (error) {
+        console.error("Error checking authentication status:", error);
+        setIsAuthenticated(false);
+      }
+    };
+
+    checkAuthStatus();
+  }, []);
+
+  const handleInvitation = async (meetingId, userId) => {
+    try {
+      if (!isAuthenticated) {
+        alert("Please login to accept the invitation");
+        return;
+      }
+
+      if (userId === userID) {
+        alert("You cannot accept your own invitation");
+        return;
+      }
+
+      const response = await axios.put("/api/google/accept-meeting", {
+        meetingId,
+        user2Id: userID,
+        user2Email: userEmail,
+      });
+      console.log("Invitation accepted:", response.data);
+    } catch (error) {
+      console.error("Error accepting invitation:", error);
+    }
+  };
+
   return (
     <div className="my-20">
-      <div className="font-bold p-8 flex items-center justify-center">
-        TO BE STYLED AND INCLUDE ALL DETAILS #SCHEDULED MEETINGS
-      </div>
       <div className=" flex flex-wrap gap-8 mx-auto items-center justify-center">
         {meetings.map((meeting) => (
           <div
@@ -57,6 +103,14 @@ const GetMeetings = () => {
               <span>{meeting.meetingLanguage}</span>
             </div>
             <div>{meeting.remarks}</div>
+            <div className="flex items-center justify-center px-4 mt-8 ">
+              <button
+                onClick={() => handleInvitation(meeting._id, meeting.userId)}
+                className="bg-slate-800 w-full rounded-full  py-6 text-white text-lg md:text-xl font-semibold font-mono "
+              >
+                Accept Invitation
+              </button>
+            </div>
           </div>
         ))}
       </div>

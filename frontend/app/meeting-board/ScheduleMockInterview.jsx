@@ -21,6 +21,7 @@ const ScheduleMockInterview = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userID, setUserID] = useState(null);
   const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -34,6 +35,7 @@ const ScheduleMockInterview = () => {
         if (response.data.isAuthenticated) {
           setUserID(JSON.parse(response.data.user).id);
           setUserName(JSON.parse(response.data.user).name);
+          setUserEmail(JSON.parse(response.data.user).email);
         }
       } catch (error) {
         console.error("Error checking authentication status:", error);
@@ -57,6 +59,7 @@ const ScheduleMockInterview = () => {
       remarks,
       userID,
       userName,
+      userEmail,
     };
 
     if (!isAuthenticated) {

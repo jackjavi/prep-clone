@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import GoogleRefreshToken from "../../models/GoogleRefreshToken.mjs";
 import MeetingData from "../../models/MeetingData.mjs";
 import Meeting from "google-meet-api";
+import sendEmail from "../../services/SendEmail.mjs";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -46,6 +47,7 @@ router.post("/api/google/gmeet", async (req, res) => {
   const checking = req.body.checking || 0;
   const userId = new mongoose.Types.ObjectId(req.body.userID);
   const userName = req.body.userName;
+  const userEmail = req.body.userEmail;
   const visibility = req.body.visibility;
   const meetingLanguage = req.body.meetingLanguage;
   const remarks = req.body.remarks || "";
@@ -92,6 +94,10 @@ router.post("/api/google/gmeet", async (req, res) => {
         description,
       });
       meetingData.save();
+      const to = userEmail;
+      const subject = "Meeting Scheduled";
+      const text = `You have a meeting scheduled on ${date} at ${time}. The meeting link is ${meetingLink}`;
+      sendEmail({ to, subject, text });
       res.status(200).json("Meeting scheduled successfully");
     })
     .catch((error) => {
@@ -122,6 +128,26 @@ router.get(
 router.get("/api/google/meetings", async (req, res) => {
   const meetings = await MeetingData.find({});
   res.status(200).json(meetings);
+});
+
+router.put("/api/google/accept-meeting", async (req, res) => {
+  try {
+    const meetingId = new mongoose.Types.ObjectId(req.body.meetingId);
+    const user2Id = new mongoose.Types.ObjectId(req.body.user2Id);
+    const user2Email = req.body.user2Email;
+    const meeting = await MeetingData.findById(meetingId);
+    meeting.user2Id = user2Id;
+    meeting.user2Email = user2Email;
+    meeting.save();
+    const to = user2Email;
+    const subject = "Meeting Scheduled";
+    const text = `You have a meeting scheduled on ${meeting.date} at ${meeting.time}. The meeting link is ${meeting.meetingLink}`;
+    sendEmail({ to, subject, text });
+    res.status(200).json("Meeting scheduled successfully");
+  } catch (error) {
+    console.error("Error accepting invitation:", error);
+    res.status(500).json(error);
+  }
 });
 
 export default router;
