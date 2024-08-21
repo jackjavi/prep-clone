@@ -126,7 +126,10 @@ router.get(
 );
 
 router.get("/api/google/meetings", async (req, res) => {
-  const meetings = await MeetingData.find({});
+  const meetings = await MeetingData.find({
+    isAccepted: false,
+    date: { $gte: new Date().toISOString().split("T")[0] },
+  }).sort({ date: 1 });
   res.status(200).json(meetings);
 });
 
@@ -138,6 +141,7 @@ router.put("/api/google/accept-meeting", async (req, res) => {
     const meeting = await MeetingData.findById(meetingId);
     meeting.user2Id = user2Id;
     meeting.user2Email = user2Email;
+    meeting.isAccepted = true;
     meeting.save();
     const to = user2Email;
     const subject = "Meeting Scheduled";
